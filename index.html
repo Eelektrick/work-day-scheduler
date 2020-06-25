@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="assets/style.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="assets/moment.js"></script>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -31,117 +30,168 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p> <!--day of the week, month, day of the month goes here-->
     </header>
-    <div class="container">
-      <!-- This is where the rows and columns will go for the scheduler -->
-      <!--Row for 9 am-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="9">
-          <p class="time-block">9AM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
+    <!-- table with times and schedule -->
+    <div class="container pb-5 mb-3">
+      <div class="table-responsive">
+        <table class="table">
+          <tbody id="schedule-table">
+            <!--Row for 9 am-->
+            <tr id="9">
+              <th scope="row" class="align-middle time">9AM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-9"></textarea>
+              </td>
+              <td id="save-9" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!--Row for 10 am-->
+            <tr id="10">
+              <th scope="row" class="align-middle time">10AM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-10"></textarea>
+              </td>
+              <td id="save-10" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!--Row for 11 am-->
+            <tr id="11">
+              <th scope="row" class="align-middle time">11AM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-11"></textarea>
+              </td>
+              <td id="save-11" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!--Row for 12 pm-->
+            <tr id="12">
+              <th scope="row" class="align-middle time">12PM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-12"></textarea>
+              </td>
+              <td id="save-1200" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!--Row for 1 pm-->
+            <tr id="1">
+              <th scope="row" class="align-middle time">1PM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-1"></textarea>
+              </td>
+              <td id="save-1" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!--Row for 2 pm-->
+            <tr id="2">
+              <th scope="row" class="align-middle time">2PM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-2"></textarea>
+              </td>
+              <td id="save-2" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!--Row for 3 pm-->
+            <tr id="3">
+              <th scope="row" class="align-middle time">3PM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-3"></textarea>
+              </td>
+              <td id="save-3" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!--Row for 4 pm-->
+            <tr id="4">
+              <th scope="row" class="align-middle time">4PM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-4"></textarea>
+              </td>
+              <td id="save-4" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!--Row for 5 pm-->
+            <tr id="5" class="border">
+              <th scope="row" class="align-middle time">5PM</th>
+              <td class="input-cell">
+                <textarea class="input-area" id="area-5"></textarea>
+              </td>
+              <td id="save-5" class="align-middle save-button-cell">
+                <div class="text-center">
+                  <button
+                    class="btn btn-outline-info save-button"
+                    type="button"
+                  >
+                    <i class="far fa-save"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <br>
-      <!--Row for 10 am-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="10">
-          <p class="time-block">10AM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
-      </div>
-      <br>
-      <!--Row for 11 am-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="11">
-          <p class="time-block">11AM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
-      </div>
-      <br>
-      <!--Row for 12 pm-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="12">
-          <p class="time-block">12PM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
-      </div>
-      <br>
-      <!--Row for 1 pm-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="1">
-          <p class="time-block">1PM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
-      </div>
-      <br>
-      <!--Row for 2 pm-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="2">
-          <p class="time-block">2PM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
-      </div>
-      <br>
-      <!--Row for 3 pm-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="3">
-          <p class="time-block">3PM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
-      </div>
-      <br>
-      <!--Row for 4 pm-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="4">
-          <p class="time-block">4PM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
-      </div>
-      <br>
-      <!--Row for 5 pm-->
-      <div class="row">
-        <div class="col-2 work-hr border-bottom border-top" data-hour="5">
-          <p class="time-block">5PM</p>
-        </div>
-        <textarea class="col-9 textarea">
-        </textarea>
-        <div class="col-1 saveBtn">
-          <i class="far fa-save"></i>
-        </div>
-      </div>
-      <br>
-    </div>   
+    </div>
 
     <script src="assets/calendar.js"></script>
   </body>
