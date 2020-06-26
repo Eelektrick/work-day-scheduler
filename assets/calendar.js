@@ -45,23 +45,27 @@ $(document).ready(function(){
     // click save button to save information in local
     function saveBtn(){
 
-        $(".save-button").on("click", function(){
+        //$(".save-button").on("click", function(event){
+        $(document).on("click", ".save-button-cell", function(event) {
+            event.preventDefault();
             //If there is any value within the given text area
-            var info = $(this).siblings(".input-area").val();
+            var info = $(this).siblings(".input-cell").children(".input-area").val();
             var hour = $(this).siblings(".workHr").data("hour");
             //And place it within the given box and store in local storage.
             console.log(hour, info);
             localStorage.setItem(hour, info);
-        
-            for (i = 0; i < 9; i++) {
-                var hour = $(".workHr").eq(i).data("hour");
-                var information = localStorage.getItem(hour);
-                //Will only update the dom if there is a value in localStorage
-                if (information){
-                 $("textarea").eq(i).text(information);
-                }
-            }
         });
+
+    }
+
+    //get the saved items in local storage and show it on page load
+    for (i = 0; i < 9; i++) {
+        var hour = $(".workHr").eq(i).data("hour");
+        var information = localStorage.getItem(hour);
+        //Will only update the dom if there is a value in localStorage
+        if (information){
+         $("textarea").eq(i).text(information);
+        }
     }
     (hourFocus,1000);
 });
